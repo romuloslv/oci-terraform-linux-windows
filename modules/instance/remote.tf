@@ -96,12 +96,12 @@ resource "null_resource" "remote_exec_linux" {
         "sudo -i iscsiadm -m node -o update -T $IQN -n node.startup -v automatic",
         "sudo -i iscsiadm -m node -T $IQN -p $IPV4:$PORT -l",
         # format disk in os
-        "sudo -i [ -d /opt/controlm ] || sudo -i mkdir -p /opt/controlm",
+        "sudo -i [ -d /opt/data ] || sudo -i mkdir -p /opt/data",
         "(echo g; echo n; echo ''; echo ''; echo ''; echo w) | sudo -i fdisk /dev/disk/by-path/$DEVICE",
         "while [[ ! -e /dev/disk/by-path/$DEVICE-part1 ]]; do sleep 1; done",
         "sudo -i mkfs.ext4 -vF /dev/disk/by-path/$DEVICE-part1",
         "export UUID=$(sudo -i blkid -s UUID -o value /dev/disk/by-path/$DEVICE-part1)",
-        "echo 'UUID='$UUID' /opt/controlm ext4 defaults,noatime,_netdev,nofail  0  10' | sudo -i tee -a /etc/fstab",
+        "echo 'UUID='$UUID' /opt/data ext4 defaults,noatime,_netdev,nofail  0  10' | sudo -i tee -a /etc/fstab",
         "sudo -i mount -a",
         # resize disk boot
         "if [ $(grep -i ^version= /etc/os-release | awk -F '=' '{print $2}' | tr -d \\\"\\,\\.) -ge 80 ]; then",
