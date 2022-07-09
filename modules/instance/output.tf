@@ -1,12 +1,10 @@
 output "username" {
     description = "user of the instance"
-    type        = string
     value       = "Windows user: ${var.user_ocid}"
 }
 
 output "password" {
     description = "pass of the instance"
-    type        = string
     value       = "Windows pass: ${random_string.instance_password.result}"
 }
 
