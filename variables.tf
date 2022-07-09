@@ -10,7 +10,6 @@ variable "subnet_id" {
 
 variable "configuration" {
     description = "The total configuration, List of Objects/Dictionary"
-    type        = string
     default     = [{}]
 }
 
