@@ -53,5 +53,4 @@ variable "availability_domain" {
 variable "api_private_key_path" {
     description = "private key path"
     type        = string
-    default     = ""
 }
