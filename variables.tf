@@ -39,8 +39,8 @@ variable "api_fingerprint" {
     type        = string  
 }
 
-variable "region" {
-    description = "region that terraform will use to create the resources"
+variable "api_private_key_path" {
+    description = "private key path"
     type        = string
 }
 
@@ -49,7 +49,7 @@ variable "availability_domain" {
     type        = string
 }
 
-variable "api_private_key_path" {
-    description = "private key path"
+variable "region" {
+    description = "region that terraform will use to create the resources"
     type        = string
 }
