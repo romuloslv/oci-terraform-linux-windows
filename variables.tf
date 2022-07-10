@@ -42,7 +42,6 @@ variable "api_fingerprint" {
 variable "region" {
     description = "region that terraform will use to create the resources"
     type        = string
-    default     = ""
 }
 
 variable "availability_domain" {
