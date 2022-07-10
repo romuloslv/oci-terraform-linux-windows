@@ -21,9 +21,10 @@ configuration    = [
   }
 ]
 
-tenancy_id       = ""
-user_id          = ""
-compartment_ocid = ""
-subnet_id        = ""
-api_fingerprint  = ""
-region           = ""
+tenancy_id           = ""
+user_id              = ""
+compartment_ocid     = ""
+subnet_id            = ""
+api_fingerprint      = ""
+api_private_key_path = ""
+region               = ""
