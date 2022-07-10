@@ -47,7 +47,6 @@ variable "region" {
 variable "availability_domain" {
     description = "availability domain"
     type        = string
-    default = ""
 }
 
 variable "api_private_key_path" {
