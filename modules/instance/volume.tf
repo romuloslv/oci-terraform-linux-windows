@@ -2,7 +2,7 @@ resource "oci_core_volume" "volume" {
     for_each = {for server in local.instances: server.display_name =>  server}
 
     display_name        = "${each.value.display_name}-OPT"
-    availability_domain = var.availability_domain
+    availability_domain = data.oci_identity_availability_domain.ad.name
     compartment_id      = var.compartment_ocid
     size_in_gbs         = each.value.volume_size
 }
