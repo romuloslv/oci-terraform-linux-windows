@@ -44,11 +44,6 @@ variable "api_private_key_path" {
     type        = string
 }
 
-variable "availability_domain" {
-    description = "availability domain to up resources"
-    type        = string
-}
-
 variable "region" {
     description = "region that terraform will use to create the resources"
     type        = string
