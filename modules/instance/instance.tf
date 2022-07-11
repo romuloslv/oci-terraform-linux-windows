@@ -23,7 +23,8 @@ resource "oci_core_instance" "instance" {
     for_each = {for server in local.instances: server.display_name =>  server}
 
     display_name            = each.value.display_name
-    availability_domain     = var.availability_domain
+    availability_domain     = data.oci_identity_availability_domain.ad.name
+    fault_domain            = data.oci_identity_fault_domains.fd.fault_domains[each.value.no_of_instances].name
     compartment_id          = var.compartment_ocid
     shape                   = each.value.shape
     state                   = var.instance_state
