@@ -49,6 +49,16 @@ data "cloudinit_config" "config" {
     }
 }
 
+data "oci_identity_availability_domain" "ad" {
+    compartment_id = var.compartment_ocid
+    ad_number      = var.ad_number
+}
+
+data "oci_identity_fault_domains" "fd" {
+    compartment_id      = var.compartment_ocid
+    availability_domain = data.oci_identity_availability_domain.ad.name
+}
+
 # filter by custom image
 #data "oci_core_images" "oracle_linux" {
 #    compartment_id           = var.compartment_ocid
