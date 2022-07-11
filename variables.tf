@@ -40,12 +40,12 @@ variable "api_fingerprint" {
 }
 
 variable "api_private_key_path" {
-    description = "private key path"
+    description = "private key path in your system"
     type        = string
 }
 
 variable "availability_domain" {
-    description = "availability domain"
+    description = "availability domain to up resources"
     type        = string
 }
 
