@@ -15,6 +15,12 @@ variable "user_ocid" {
     default = "opc"
 }
 
+variable "ad_number" {
+    description = "AD default"
+    type    = number
+    default = "1"
+}
+
 variable "availability_domain" {
     
 }
